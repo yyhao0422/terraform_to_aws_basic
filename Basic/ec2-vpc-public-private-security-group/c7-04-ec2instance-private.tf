@@ -13,7 +13,7 @@ module "ec2_private" {
   instance_type          = var.instance_type
   key_name               = var.instance_keypair
   
-  vpc_security_group_ids = [module.public_bastion_sg.this_security_group_id]
+  vpc_security_group_ids = [module.private_sg.this_security_group_id]
   
   subnet_ids = [
     module.vpc.private_subnets[0],
